@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Modifications}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}GUI}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Window Icon and Name}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Main Interface}{2}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Wake-up Logic}{2}{subsubsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.2}Code}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Interface code}{3}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Speech Recognition}{4}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Command Execution}{5}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Assistant Functions}{6}{subsubsection.1.2.4}%
+\contentsline {section}{\numberline {2}Discussion}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Accuracy of Speech Recognition}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Audio Recording Quality}{7}{subsection.2.2}%

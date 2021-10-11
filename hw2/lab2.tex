@@ -1,0 +1,310 @@
+%%
+%% This is file `mcmthesis-demo.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% mcmthesis.dtx  (with options: `demo')
+%%
+%% -----------------------------------
+%%
+%% This is a generated file.
+%%
+%% Copyright (C)
+%%       2010 -- 2015 by Zhaoli Wang
+%%       2014 -- 2019 by Liam Huang
+%%       2019 -- present by latexstudio.net
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The Current Maintainer of this work is Liam Huang.
+%%
+%%
+%% This is file `mcmthesis-demo.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% mcmthesis.dtx  (with options: `demo')
+%%
+%% -----------------------------------
+%%
+%% This is a generated file.
+%%
+%% Copyright (C)
+%%       2010 -- 2015 by Zhaoli Wang
+%%       2014 -- 2019 by Liam Huang
+%%       2019 -- present by latexstudio.net
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The Current Maintainer of this work is Liam Huang.
+%%
+
+\documentclass{hci}
+\usepackage{listings} 
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{indentfirst}
+%%\usepackage{CTeX}
+\setlength{\parindent}{2em}
+\pmsetup{CTeX = false,   % 使用 CTeX 套装时，设置为 true
+        tcn = 1854116 Mingzhi Zhu, 
+        sheet = true, titleinsheet = true, keywordsinsheet = true,
+        titlepage = true, abstract = true}
+\usepackage{newtxtext}%\usepackage{palatino}
+\usepackage{lipsum}
+%\usepackage[notref,notcite]{showkeys}
+\title{Lab 2: Information Retrieval}
+\author{1854116 \\Mingzhi Zhu}
+\date{Image Search Engine\\\today}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+%% Generate the Table of Contents, if it's needed.
+%% \tableofcontents
+%% \newpage
+%%
+%% Generate the Memorandum, if it's needed.
+%% \memoto{\LaTeX{}studio}
+%% \memofrom{Liam Huang}
+%% \memosubject{Happy \TeX{}ing!}
+%% \memodate{\today}
+%% \logo{\LARGE I'm pretending to be a LOGO!}
+%% \begin{memo}[Memorandum]
+%%   \lipsum[1-3]
+%% \end{memo}
+%%
+\section{Describe the Requirements}
+A image search task contains these following portions.My following discussion will take Google image search engine as an example.
+\subsection{Homepage}
+A homepage which hold a brief introduction to let the user know what can this image search engine do.The homepage of Google image search engine is shown in the figure1 below.
+
+% TODO: \usepackage{graphicx} required
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/homepage1}
+	\caption{Google Image Search Homepage}
+	\label{fig:homepage}
+\end{figure}
+
+\subsection{Upload Ways}
+Image search engine should provide users with ways to upload images.Google image search engine has three ways to upload pictures of users.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/uploadways}
+	\caption{Three Ways of Upload}
+	\label{fig:uploadways}
+\end{figure}
+Users can drag the image to upload or input the image address to upload or select image to upload through the select window.
+
+\subsection{Waiting Logo}
+When users upload images, search engine need time to retrieve similar images.During this time,engine should show a waiting logo, which can relax the users when the engine is searching.This part is shown in figure3.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/waiting}
+	\caption{Waiting Logo}
+	\label{fig:waiting}
+\end{figure}
+	
+\subsection{Show the Result}
+
+
+\begin{itemize}
+	\item Show the image source file to let the user know which image he/she upload to search just now.The size of this uploaded image should be smaller than the original image so that not taking up a lot of page space. The focus of page space should be on search results.
+
+	\item Show the total number of the result which can let the user know how many images are similar to they pictures in the engine.The number should be emphasized and users can easily find out how many similar results they have found.
+	\item Following figure4 shows how Google engine show its search results.
+	
+\end{itemize}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/result}
+	\caption{Waiting Logo}
+	\label{fig:result}
+\end{figure}
+
+\subsection{Result Classification}
+\begin{itemize}
+	\item Classify the images of the result, which can let the user browse the result distinctly and the tags should
+	be discriminative by using different color.
+	
+	\item There should present a favorites and the user can drag the images of the result to the favorites. And if user click the favorites,the search engine will display the images favored by users only.If the user click the favorites again,favorites will close and search engine will display all the results.
+	
+	\item Users can click one tag, and the system should show the images which hold this tag only.
+	
+\end{itemize}
+\subsection{Clear}
+The search engine should provide two clear buttons, one to clear the uploaded image and the other to clear the whole search result.The purpose of these buttons is to help the user quickly start his next search.One example is that Google Image search engine provides two $X$ buttons to clear search mark, as shown in figure5.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/X}
+	\caption{Clear Botton}
+	\label{fig:X}
+\end{figure}
+
+
+\section{Design for Five-Stages Search Framework}
+\subsection{Formulation}
+\begin{itemize}
+	\item A homepage contains a brief introduction about how to using the image search engine and provides a button to open the search image input box.The details of this portion are shown in figure6.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/myhomepage}
+		\caption{Search Engine Homepage}
+		\label{fig:myhomepage}
+	\end{figure}
+	\item After clicking the image recognition button, the user will jump to the image upload interface.The user can directly drag the image from the local to the input box and upload the image, or click the select-file button to open a pop-up dialog and select local image to upload.The details of this portion are shown in figure7,8,9.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/upload}
+		\caption{Image Upload Interface}
+		\label{fig:upload}
+	\end{figure}
+	\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/drag}
+	\caption{Upload Image by Drag Image}
+	\label{fig:drag}
+	\end{figure}
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/inputbox}
+		\caption{Upload Image by Pop-up Dialog}
+		\label{fig:inputbox}
+	\end{figure}
+	\item Users can preview the query image in the searching window after upload image.The interface shows the name and size of the query image,and provides a magnifying glass component to enlarge the preview of the image on the interface.The details of this portion are shown in figure10.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/preview}
+		\caption{Preview Query Image}
+		\label{fig:preview}
+	\end{figure}
+	\item After the user clicks the search image button, a waiting animation will appear to relax user.The details of this portion are shown in figure11.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/relax}
+		\caption{Relax User}
+		\label{fig:relax}
+	\end{figure}
+	
+\end{itemize}
+
+\subsection{Initiation of Action}
+\begin{itemize}
+	\item Interface has a \textit{search} button.
+	\item Interface has a \textit{remove-file} button.
+	\item Interface has a \textit{select-file} button.
+	\item Interface has a \textit{remove-all} button.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.6\linewidth]{figures/buttom}
+		\caption{Buttons}
+		\label{fig:buttons}
+	\end{figure}
+	\item Interface has a favorites icon.User can click the favorite icon to open the favorites, and then click the favorites again to close.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.6\linewidth]{figures/favorites}
+		\caption{Favorites Icon}
+		\label{fig:favorites}
+	\end{figure}
+	\item Users can drag the image to the favorites,and the favorites icon will change to \textit{not-empty}.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.3\linewidth]{figures/notempty}
+		\caption{Favorites Not-Empty Icon}
+		\label{fig:notempty}
+	\end{figure}
+\end{itemize}
+\subsection{Review of Results}
+\begin{itemize}
+	\item When the search process finished, the result will appear and interface will keep search terms and constrains visible.
+	\item On the bottom of the page is the number of searching results.User can overview the search result by reading this.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/review}
+		\caption{Review Results}
+		\label{fig:review}
+	\end{figure}
+	\item Users can click the resulting image to enlarge it, and click again to restore them.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/enlarge}
+		\caption{Enlarge Results}
+		\label{fig:enlarge}
+	\end{figure}
+	
+\end{itemize}
+
+\subsection{Refinement}
+\begin{itemize}
+	\item Users can click the tag buttons on the left to view the image that only contain their favorite tags, or click favorites to view their favorite image.The details of this portion are shown in figure17.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.8\linewidth]{figures/tags}
+		\caption{Filter the Results by Tags or Favorite}
+		\label{fig:tags}
+	\end{figure}
+	\item To make changing of search parameters convenient, the interface provides two clear-buttons to help users modify their search or begin a new search.If user wants to remove the image he or she uploaded, he can click the \textit{remove-file} button. If user wants to restart the whole search process, he or she can click the \textit{remove-all} button.	
+\end{itemize}
+
+\subsection{Use}
+Users can select images to a favorite list:
+\begin{itemize}
+	\item At the beginning, the favorites icon displays as \textit{empty favorites}.
+	\item Users can drag their favorite images to the favorite icon, this operation is regarded as the user collect these images and the icon displays as \textit{not-empty favorites}.
+	\item Users can click the favorite icon to view their favorite images,and click again to close the favorites.
+\end{itemize}
+	\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/favorites-open}
+	\caption{Open Favorites}
+	\label{fig:favorite-open}
+\end{figure}
+
+
+
+
+\begin{thebibliography}{99}
+\bibitem{1} Designing the User Interface: Strategies for Effective Human-Computer Interaction, 6th edition,Ben Shneiderman,Catherine Plaisant,Maxine Cohen
+\bibitem{2} UI-component,UI Kits, Templates and Dashboards built on top of Bootstrap,\url{https://www.creative-tim.com/}
+\end{thebibliography}
+
+\end{document}
+%%
+%% This work consists of these files mcmthesis.dtx,
+%%                                   figures/ and
+%%                                   code/,
+%% and the derived files             mcmthesis.cls,
+%%                  command execution                 mcmthesis-demo.tex,
+%%                                   README,
+%%                                   LICENSE,
+%%                                   mcmthesis.pdf and
+%%                                   mcmthesis-demo.pdf.
+%%
+%% End of file `mcmthesis-demo.tex'.

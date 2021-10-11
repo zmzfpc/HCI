@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Modifications}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{GUI}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Window\040Icon\040and\040Name}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Main\040Interface}{subsection.1.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.1.3}{Wake-up\040Logic}{subsection.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.2}{Code}{section.1}% 6
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Interface\040code}{subsection.1.2}% 7
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Speech\040Recognition}{subsection.1.2}% 8
+\BOOKMARK [3][-]{subsubsection.1.2.3}{Command\040Execution}{subsection.1.2}% 9
+\BOOKMARK [3][-]{subsubsection.1.2.4}{Assistant\040Functions}{subsection.1.2}% 10
+\BOOKMARK [1][-]{section.2}{Discussion}{}% 11
+\BOOKMARK [2][-]{subsection.2.1}{Accuracy\040of\040Speech\040Recognition}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.2}{Audio\040Recording\040Quality}{section.2}% 13

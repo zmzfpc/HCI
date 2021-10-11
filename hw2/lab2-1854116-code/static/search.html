@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>图片搜索助手</title>
+
+    <!--logo插入-->
+    <link href="assets/logo.png" rel="icon" type="image/png">
+
+    <!--检索系统js文件-->
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/coming-sssoon.css" rel="stylesheet" />
+
+    <!--     Fonts     -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    <!--搜索结果图片css-->
+    <link rel="stylesheet" type="text/css" href="css/imgtable.css">
+    <!--tag标签css-->
+    <link rel="stylesheet" type="text/css" href="css/imgtag.css">
+
+    <script type="text/javascript" src="js/slide.js"> </script>
+     <!--file in js-->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">  
+     <link href="css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
+     <link href="css/theme.css" media="all" rel="stylesheet" type="text/css"/>
+     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+     <script src="js/fileinput.js" type="text/javascript"></script>
+     <script src="js/theme.js" type="text/javascript"></script>
+     <script type="text/javascript" src="js/slide.js"> </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/flags/CN.png" />
+                            简体中文
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="divider"></li>
+                            <li><a href="#"><img src="images/flags/US.png" /> English(US) <span
+                                        class="label label-default">soon</span></a></li>
+                            <li><a href="#"><img src="images/flags/DE.png" /> Deutsch <span
+                                        class="label label-default">soon</span></a></li>
+                            <li><a href="#"><img src="images/flags/GB.png" /> English(UK) <span
+                                        class="label label-default">soon</span></a></li>
+                            <li><a href="#"><img src="images/flags/FR.png" /> Français <span
+                                        class="label label-default">soon</span></a></li>
+                            <li><a href="#"><img src="images/flags/RO.png" /> Română <span
+                                        class="label label-default">soon</span></a></li>
+                            <li><a href="#"><img src="images/flags/ES.png" /> Español <span
+                                        class="label label-default">soon</span></a></li>
+                            <li><a href="#"><img src="images/flags/BR.png" /> Português <span
+                                        class="label label-default">soon</span></a></li>
+                            <li><a href="#"><img src="images/flags/JP.png" /> 日本語 <span
+                                        class="label label-default">soon</span></a></li>
+                            <li><a href="#"><img src="images/flags/TR.png" /> Türkçe <span
+                                        class="label label-default">soon</span></a></li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="">
+                            <i class="fa fa-refresh"></i>
+                            刷新本页
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="http://www.github.com/zmzfpc">
+                            <i class="fa fa-star"></i>
+                            点赞作者
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:22869929@qq.com">
+                            <i class="fa fa-envelope-o"></i>
+                            作者邮箱
+                        </a>
+                    </li> -->
+                </ul>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+    <div class="main" style="background-image: url('images/restaurant.jpg');height: 100%;">
+
+        <!--    Change the image source '/images/default.jpg' with your favourite image.     -->
+
+        <div class="cover black" data-color="black" style="z-index: 998;width: 100%; height: 100%">
+
+            <!-- <div class='shitu-wrapper' style="z-index: 999;width: 100%; height: 100%">
+                <div class='shitu-upper'> -->
+
+
+                    <!--检索界面-->
+                    <div id="stcontent" class="common-shitu" style="position: absolute;top: 5%;left: 0%;
+            width: 80%;height: 80%;margin-left: 10%;margin-top: 5%;">
+                        <div id="stsug" class="stsug" style="width: 100%; height: 100%;position: relative;">
+
+                            <!--蒙版-->
+                            <div id="main" class="container" style="width: 100%; height: 100%;margin: 0 auto;
+                    background-color: rgba(255, 255, 255, 0.2);">
+
+                                <!--上传按钮 & 搜索按钮-->
+                                <div class="container-text" style="margin-left: 0%;max-height: 30%">
+                                    <div style="clear: both;"></div>
+                                    <br>
+                                    <form method=post enctype=multipart/form-data"> 
+            
+                                            <div class="form-group">
+                                                <div class="file-loading">
+                                                    
+                                                    <input id="file-3" type="file" name="file"  required onchange="show(this)" >
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn1 btn-warning btn-fill" onclick="fun()">开始搜索</button>
+                                    </form>
+                                    <br>
+                                    <tr id="row1" style="display:none;">
+                                        <td><a href="">
+                                                <button id="clear" class="btn1 btn-danger btn-fill">清除搜索</button>
+                                            </a>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </div>
+
+                                <!--loading图标-->
+                                <div style="position: absolute;
+                                margin-left: 42.5%;margin-top: 22%;">
+                                    <img id="load" src="/images/ajax-loader.gif"
+                                        style="height:100px;weight:100px;display:none;">
+                                </div>
+
+                                <!--搜索结果 => 本次共检索到8张图片-->
+                                <div style="position: absolute;
+                                margin-left: 35%;margin-top: 25%;">
+                                    <td>
+                                        <b id="retrieval-result1" style="color: rgb(255, 255, 255);
+                                    font-size: 25px;display: none;">
+                                            本次共检索到 </b>
+                                        <b id="retrieval-result2" style="color: rgb(255, 0, 0);
+                                    font-size: 25px;display: none;">
+                                            &nbsp;8&nbsp; </b>
+                                        <b id="retrieval-result3" style="color: rgb(255, 255, 255);
+                                    font-size: 25px;display: none;">
+                                            张相似图片 </b>
+                                    </td>
+                                </div>
+
+                                <!--结果显示-->
+                                <div id="main" class="container">
+
+                                    <!--相似图片 & 图片标签-->
+                                    <div style="display: inline-block;margin-left: 10%;z-index: 9999;position: fixed !important;
+                                    right: 25%;top: 23%;">
+                                        <table id="table" class="table" style="display:none;">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="table-td">
+                                                        <img class="min" id="img0" src="" alt="Norway" />
+                                                        <div class="imgtag" id="imgtag0"></div>
+                                                    </td>
+                                                    <td class="table-td">
+                                                        <img class="min" id="img1" src="" alt="Norway" />
+                                                        <div class="imgtag" id="imgtag1"></div>
+                                                    </td>
+                                                    <td class="table-td">
+                                                        <img class="min" id="img2" src="" alt="Norway" />
+                                                        <div class="imgtag" id="imgtag2"></div>
+                                                    </td>
+                                                    <td class="table-td">
+                                                        <img class="min" id="img3" src="" alt="Norway" />
+                                                        <div class="imgtag" id="imgtag3"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="table-td">
+                                                        <img class="min" id="img4" src="" alt="Norway" />
+                                                        <div class="imgtag" id="imgtag4"></div>
+                                                    </td>
+                                                    <td class="table-td">
+                                                        <img class="min" id="img5" src="" alt="Norway" />
+                                                        <div class="imgtag" id="imgtag5"></div>
+                                                    </td>
+                                                    <td class="table-td">
+                                                        <img class="min" id="img6" src="" alt="Norway" />
+                                                        <div class="imgtag" id="imgtag6"></div>
+                                                    </td>
+                                                    <td class="table-td">
+                                                        <img class="min" id="img7" src="" alt="Norway" />
+                                                        <div class="imgtag" id="imgtag7"></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!--标签按钮-->
+                                    <div class="tagbtn" style="margin-left: 10%;z-index: 9999;position: fixed !important;
+                            right: 15%;top: 23%;">
+                                        <table id="tagtable" class="table" style="display:none;bottom: 30%;">
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!--收藏夹-->
+                                <div style="margin-left: 70%;z-index: 999; position: fixed ! important;
+                        right: 12%;top: 80%;">
+                                    <img class="favorites"
+                                        src="images/folder.png"
+                                        id="favorites" style="position: absolute;right: 0px;
+                                top: 0px;width: 120px;height: 95px;" draggable="false" onclick="favoritesClick()" />
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                <!-- </div>
+            </div> -->
+        </div>
+        <div class="footer">
+            <div class="container">
+                制作人：1854116 朱明志
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<!--图片状态切换js-->
+<script type="text/javascript" src="js/toggleImgSize.js"></script>
+
+<!--图像检索js-->
+<!--与.py文件交互-->
+<script type="text/javascript" src="js/imgSearch.js"> </script>
+
+<!--显示用户输入的原图js-->
+<script type="text/javascript" src="js/showSource.js"> </script>
+
+<!--收藏夹操作js-->
+<script type="text/javascript" src="js/favorites.js"></script>
+
+<!--标签操作js-->
+<script type="text/javascript" src="js/tag.js"></script>
+
+<!--生成随机颜色js-->
+<script type="text/javascript" src="js/randColor.js"></script>
+<script>
+    
+    $("#file-3").fileinput({
+        theme: 'fas',
+        showUpload: false,
+        showCaption: false,
+        browseClass: "btn btn-primary btn-lg",
+        fileType: "any",
+        previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+        overwriteInitial: false,
+        initialPreviewAsData: true,
+        initialPreview: [
+        ],
+        initialPreviewConfig: [
+        ]
+    });
+    
+</script>
+</html>

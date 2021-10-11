@@ -1,0 +1,6 @@
+Dialog.setWindowTitle(_translate("Dialog", "语音助手小思"))
+self.label_4.setText(_translate("Dialog", "你好！小思能帮到你吗？"))
+self.label_3.setText(_translate("Dialog", "你可以点击图标试着说："))
+self.label.setText(_translate("Dialog", "1.\"来点音乐\"来听音乐"))
+self.label_2.setText(_translate("Dialog", "2. \"打开记事本\"来打开笔记本"))
+self.label_5.setText(_translate("Dialog", "3. \"搜索...\"去百度搜索你的答案"))
